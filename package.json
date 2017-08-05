@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "JavaScript starter kit with built in development environment for beginners",
   "scripts": {
+	"prestart": "node buildScripts/startMessage.js",
+	"start": "npm-run-all --parallel security-check start-server",
+	"start-server": "node buildScripts/srcServer.js",
+	"security-check": "nsp check",
+	"localtunnel": "lt --port 3000",
+	"share": "npm-run-all --parallel start-server localtunnel"
   },
-  "author": "Cory House",
-  "license": "MIT",
+  "author": "Rahul Arora",
+  "license": "",
   "dependencies": {
     "whatwg-fetch": "1.0.0"
   },
